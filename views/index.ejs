@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Guestbook</h1>
+
+  <h2>Add a comment</h2>
+
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div>
+    <h2>Replace last comment written</h2>
+    <button id="update"> Replace quote! </button>
+  </div>
+
+  <div>
+    <h2>Delete last comment</h2>
+    <button id="delete"> Delete</button>
+  </div>
+
+  <ul class="quotes">
+    <% for(var i=0; i<quotes.length; i++) {%>
+      <li class="quote">
+        <strong><span><%= quotes[i].name %>:  </span></strong>
+        <span><%= quotes[i].quote %></span>
+      </li>
+    <% } %>
+    </ul>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
